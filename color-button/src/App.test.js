@@ -32,11 +32,11 @@ test('initial conditions', () => {
 test('disable button when checkbox is checked', () => {
   render(<App/>);
   const button = screen.getByRole('button', { name: 'Change to blue' });
-  const checkbox = screen.getByRole('checkbox');
+  const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
 
   fireEvent.click(checkbox);
   expect(button).toBeDisabled();
-  
+
   fireEvent.click(checkbox);
   expect(button).toBeEnabled();
  
